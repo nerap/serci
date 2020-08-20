@@ -38,17 +38,6 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manife
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
-if [ $VMDRIVER = 'docker' ]
-then
-	IP=`docker inspect minikube --format="{{range .NetworkSettings.Networks}}{{.Gateway}}{{end}}"`
-else
-	IP=`minikube ip`
-fi
-
-IP=`echo $IP|awk -F '.' '{print $1"."$2"."$3"."128}'`
-cp srcs/metallb_base.yaml srcs/metallb.yaml
-sed -ie "s/IPTMP/$IP/g" srcs/metallb.yaml
-
 ###########################
 ## DEPLOY                ##
 ###########################
