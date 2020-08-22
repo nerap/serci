@@ -18,7 +18,6 @@ FLUSH PRIVILEGES;
 EOF
 
 echo "toto"
-#/usr/bin/mysqld_safe –skip-grant-tables –skip-networking < $tfile
 /usr/bin/mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-networking=0 < $tfile
 rm -f $tfile
 
