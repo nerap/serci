@@ -17,14 +17,11 @@ CREATE DATABASE wordpress;
 FLUSH PRIVILEGES;
 EOF
 
-echo "toto"
 /usr/bin/mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-networking=0 < $tfile
 rm -f $tfile
 
-echo "tata"
 screen -dmS mysql /usr/bin/mysqld --user=mysql --console --skip-name-resolve --skip-networking=0
 
-echo "Waiting"
 while ! mysqladmin ping
 do
 	sleep 1
