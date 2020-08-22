@@ -43,8 +43,8 @@ done
 sleep 10
 screen -dmS t0 minikube dashboard
 
-screen -dmS t1 ./srcs/setup_ftps.sh
-screen -dmS t1 ./srcs/setup_wordpress.sh
+screen -dmS t1 ./srcs/setup/setup_ftps.sh
+screen -dmS t1 ./srcs/setup/setup_wordpress.sh
 
 kill -9 $(ps aux | grep 'print.sh' | awk '{print $2}');
 rm /tmp/tp
