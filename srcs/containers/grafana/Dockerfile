@@ -1,5 +1,5 @@
 FROM telegraf:v1
-MAINTAINER ybayart
+MAINTAINER racohen
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk update && apk add grafana@testing
 RUN sed -i -e "s/TMPBDD/grafana/g" /etc/telegraf/telegraf.conf
