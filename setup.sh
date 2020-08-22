@@ -70,3 +70,4 @@ screen -dmS t0 minikube dashboard
 ###########################
 
 screen -dmS t1 ./srcs/setup_ftps.sh
+screen -dmS t1 ./srcs/setup_wordpress.sh
