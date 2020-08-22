@@ -1,5 +1,5 @@
 FROM nginx:v1
-MAINTAINER ybayart
+MAINTAINER racohen
 RUN apk add wget php7-iconv php7-json php7-session php7-mysqli
 RUN cd /tmp/ \
 && wget https://files.phpmyadmin.net/phpMyAdmin/4.9.1/phpMyAdmin-4.9.1-all-languages.tar.gz \

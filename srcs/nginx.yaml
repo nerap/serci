@@ -39,43 +39,12 @@ spec:
   ports:
   - port: 22
     protocol: TCP
-    name: ssh
+    name: ssh-port
   - port: 80
     protocol: TCP
-    name: http
+    name: http-port
   - port: 443
     protocol: TCP
-    name: https
+    name: ssl-port
   selector:
     app: nginx
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: nginx
-spec:
-  rules:
-  - host: nginx.ft-services
-    http:
-      paths:
-      - backend:
-          serviceName: nginx
-          servicePort: 80
-  - host: grafana.ft-services
-    http:
-      paths:
-      - backend:
-          serviceName: grafana
-          servicePort: 3000
-  - host: phpmyadmin.ft-services
-    http:
-      paths:
-      - backend:
-          serviceName: phpmyadmin
-          servicePort: 5000
-  - host: wordpress.ft-services
-    http:
-      paths:
-      - backend:
-          serviceName: wordpress
-          servicePort: 5050

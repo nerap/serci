@@ -36,9 +36,9 @@ spec:
   - port: 21
     targetPort: 21
     protocol: TCP
-    name: 21-ftps
+    name: tcp-port
   - port: 30000
     protocol: TCP
-    name: 30000-ftps
+    name: data-port
   selector:
     app: ftps

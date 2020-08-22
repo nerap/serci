@@ -38,7 +38,7 @@ spec:
   ports:
   - port: 5050
     protocol: TCP
-    name: http
+    name: http-port
   selector:
     app: wordpress
 

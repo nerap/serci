@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER ybayart
+MAINTAINER racohen
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk update && apk add screen telegraf@testing
 RUN mkdir -p /etc/telegraf  
